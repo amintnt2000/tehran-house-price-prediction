@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>پیش‌بینی قیمت خانه در تهران</title>
+    <style>
+        body { font-family: Tahoma, sans-serif; max-width: 420px; margin: 40px auto; }
+        label, select, input[type=number] { display: block; margin: 10px 0; width: 100%; }
+        button { padding: 8px 20px; }
+        .result { margin-top: 20px; padding: 12px; background: #e8f5e9; border-radius: 6px; }
+        .error { color: #c62828; }
+    </style>
+</head>
+<body>
+    <h2>پیش‌بینی قیمت خانه در تهران</h2>
+    <form method="post">
+        <label>متراژ (متر مربع)
+            <input type="number" name="area" min="20" max="1000" step="any" required>
+        </label>
+        <label>تعداد اتاق
+            <input type="number" name="room" min="0" max="6" required>
+        </label>
+        <label>محله
+            <select name="address" required>
+                {% for a in addresses %}
+                <option value="{{ a }}">{{ a }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label><input type="checkbox" name="parking"> پارکینگ</label>
+        <label><input type="checkbox" name="warehouse"> انباری</label>
+        <label><input type="checkbox" name="elevator"> آسانسور</label>
+        <button type="submit">پیش‌بینی</button>
+    </form>
+
+    {% if price %}
+    <div class="result">قیمت تخمینی: {{ "{:,}".format(price) }} دلار</div>
+    {% endif %}
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
