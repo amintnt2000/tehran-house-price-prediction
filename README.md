@@ -143,4 +143,5 @@ I built the data analysis, model training, and evaluation myself. I used Claude 
 ## Author
 
 **Mohammad Amin Nochiyan**
-GitHub: [@amintnt2000](https://github.com/amintnt2000)
+GitHub: [@amintnt2000](https://github.com/amintnt2000)  
+LinkedIn: [Mohammad Amin Nochiyan](https://www.linkedin.com/in/YOUR-LINKEDIN-ID)
